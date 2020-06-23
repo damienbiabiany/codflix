@@ -96,14 +96,14 @@ class Media {
     echo "model/media.php<br>";
 
 
-    //$req  = $db->prepare( "SELECT * FROM user WHERE id = ?");
+    // $req  = $db->prepare( "SELECT * FROM user WHERE id = ?");
 
-    //$stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe_insert_mutiple_procedural'");
+    // $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe_insert_mutiple_procedural'");
 
-    $req  = $db->prepare( "SELECT title FROM media WHERE title = ? ORDER BY release_date DESC" );
+    // $req  = $db->prepare( "SELECT title FROM media WHERE title = ? ORDER BY release_date DESC" );
 -
 
-    $req  = $db->prepare( "SELECT title FROM media" );// it worked
+    $req  = $db->prepare( "SELECT id, title, trailer_url FROM media" );// it worked
 
     $req->execute( array( '%' . $title . '%' ));
 
