@@ -91,12 +91,25 @@ class Media {
   public static function filterMedias( $title ) {
 
     // Open database connection
-    $db   = init_db();
+    $db   = init_db(); // from
 
-    $req  = $db->prepare( "SELECT * FROM media WHERE title = ? ORDER BY release_date DESC" );
+    echo "model/media.php<br>";
+
+
+    //$req  = $db->prepare( "SELECT * FROM user WHERE id = ?");
+
+    //$stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe_insert_mutiple_procedural'");
+
+    $req  = $db->prepare( "SELECT title FROM media WHERE title = ? ORDER BY release_date DESC" );
+-
+
+    $req  = $db->prepare( "SELECT title FROM media" );// it worked
+
     $req->execute( array( '%' . $title . '%' ));
 
-    // Close databse connection
+    echo "title =". $title."<br>" ;
+
+    // Close database connection
     $db   = null;
 
     return $req->fetchAll();

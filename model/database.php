@@ -11,6 +11,8 @@ function init_db() {
     $dbname   = 'codflix';
     $charset  = 'utf8';
     $user     = 'root';
+    // $password = '';
+    // for me the password is root
     $password = 'root';
 
     $db = new PDO( "mysql:host=$host;dbname=$dbname;charset=$charset", $user, $password );
