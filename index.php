@@ -41,10 +41,13 @@ else:
 
   $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
+  // redirect to  media Page
   if( $user_id  && !$_GET['url'] == 'contact'):
     mediaPage();
     
   else:
+
+    // redirect to home Page
     if(!$_GET['url'] == 'contact'):
       homePage();
 
@@ -53,8 +56,7 @@ else:
 
 endif;
 
-
-  
+// redirect to contact Page
 if( $_GET['url'] == 'contact'):
   require('view/contactView.php');
 endif;

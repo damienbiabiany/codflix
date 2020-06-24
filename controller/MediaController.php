@@ -25,6 +25,8 @@ function mediaPage() {
   $release_date      = $medias[$mediaId-1]['release_date'];
 
 
+  $a = 5;
+
   if( isset($_GET['media'])):
     require('view/mediaDetailView.php');
   else:

@@ -14,18 +14,47 @@
 </div>
 
 <div class="media-list">
-    <?php foreach( $medias as $media ): ?>
-        <a class="item" href="index.php?media=<?= $media['id']; ?>">
-            <div class="video">
-                <div>
-                    <iframe allowfullscreen="" frameborder="0"
-                            src="<?= $media['trailer_url']; ?>" ></iframe>
-                </div>
-            </div>
-            <div class="title"><?= $media['title']; ?></div>
+
+  
         
-        </a>
-    <?php endforeach; ?>
+        <?php foreach( $medias as $media ): ?>
+
+            <!-- We're displaying  the media of type film--->
+            <?php if ( $media['type'] == 'film'): ?>
+
+                <a class="item" href="index.php?media=<?= $media['id']; ?>">
+                    <div class="video">
+                        <div>
+                            <iframe allowfullscreen="" frameborder="0"
+                                    src="<?= $media['trailer_url']; ?>" ></iframe>
+                        </div>
+                    </div>
+                    <div class="title"><?= $media['title']; ?></div>
+                
+                </a>
+            <?php endif; ?>
+
+            <!-- We 're displaying only the media of type serie --->
+            <?php if ( $media['type'] == 'série'): ?>
+
+                <a class="item" href="index.php?media=<?= $media['id']; ?>">
+                    <div class="video">
+                        <div>
+                            <iframe allowfullscreen="" frameborder="0"
+                                    src="<?= $media['trailer_url']; ?>" ></iframe>
+                        </div>
+                    </div>
+                    <div class="title"><?= $media['title']; ?></div>
+
+                </a>
+            <?php endif; ?>
+
+
+        <?php endforeach; ?>
+   
+
+
+
 </div>
 
 
