@@ -23,9 +23,6 @@
       </div>
       <div class="row">
         <div class="column">
-          <img src="/w3images/map.jpg" style="width:100%">
-        </div>
-        <div class="column">
           <form action="/action_page.php">
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -36,6 +33,7 @@
               <option value="australia">Australia</option>
               <option value="canada">Canada</option>
               <option value="usa">USA</option>
+              <option value="france">France</Frame></option>
             </select>
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>

@@ -13,28 +13,40 @@
 
 <div class="media-list">
 
-    <div>
-            <h2><?=$title; ?></h2>
+    <div class="row">
+        <div class="col-md-6">
+                <h2><?=$title; ?></h2>
+        </div>
+        <div class="col-md-8 video">
+                        <div>
+                            <iframe allowfullscreen="" frameborder="0"
+                                    src="<?= $trailer_url; ?>" ></iframe>
+                        </div>
+        </div>
     </div>
-    <div class="video">
-                    <div>
-                        <iframe allowfullscreen="" frameborder="0"
-                                src="<?= $trailer_url; ?>" ></iframe>
-                    </div>
-    </div>
-
     
+    
+    <div class="row">
+        <div class="col-md-8">
+        <p>Release date :<?php echo $release_date.'<br>';?> </p>
+    </div> 
 
-    <?php 
-          echo $mediaType.'<br>';
-          echo $title.'<br>';
-          echo $status.'<br>';
-          echo $summary.'<br>';
+    <div class="row">
 
-          echo $release_date.'<br>';
+        <div class="col-md-8 mt-3 mb-3">
+          <span>Synopsis</span> 
+        </div> 
+        <div class="col-md-8">
           
-    ?> 
-    
+            <?php 
+                  echo $summary.'<br>';
+  
+            ?> 
+         </div> 
+
+
+
+
 
 <?php $content = ob_get_clean(); ?>
 
