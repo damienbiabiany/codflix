@@ -23,6 +23,7 @@
                 </div>
             </div>
             <div class="title"><?= $media['title']; ?></div>
+        
         </a>
     <?php endforeach; ?>
 </div>

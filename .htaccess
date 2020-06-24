@@ -1,0 +1,17 @@
+#RewriteEngine On
+
+# if trageted file no exist
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+# if trageted directory no exist
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+# $1 parameter
+# NC = NO CASE
+# L = Last rules
+#RewriteRule ^(.*)$ index.php?media=$1 [NC,L]
+#RewriteRule ^(.*)$ index.php?url=$1 [NC,L]
+
+
+#Redirect /index.php /view/mediaDetailView.php
+
