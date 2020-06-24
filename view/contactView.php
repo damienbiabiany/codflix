@@ -16,10 +16,11 @@
 <div class="media-list">
 
  
-    <div class="container">
+    <div class="container form-container">
       <div style="text-align:center">
         <h2>Contact Us</h2>
-        <p>Swing by for a cup of coffee, or leave us a message:</p>
+        
+        
       </div>
       <div class="row">
         <div class="column">

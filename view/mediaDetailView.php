@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-8 video">
                         <div>
-                            <iframe allowfullscreen="" frameborder="0"
+                            <iframe allowfullscreen="true" frameborder="0"
                                     src="<?= $trailer_url; ?>" ></iframe>
                         </div>
         </div>
