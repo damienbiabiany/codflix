@@ -75,7 +75,7 @@
 
 
             <!-- We 're displaying only the media of type serie  (ONLY SERIES)--->
-            <?php if (( $_GET['url'] == 'series')  && ($media['type']=='series') ): ?>
+            <?php if (( $_GET['url'] == 'series')  && ($media['type']=='serie') ): ?>
 
                 <a class="item" href="index.php?media=<?= $media['id']; ?>">
                     <div class="video">

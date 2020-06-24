@@ -18,10 +18,10 @@
                 <h2><?=$title; ?></h2>
         </div>
         <div class="col-md-8 video">
-                        <div>
-                            <iframe allowfullscreen="true" frameborder="0"
-                                    src="<?= $trailer_url; ?>" ></iframe>
-                        </div>
+                <div>
+                    <iframe allowfullscreen="" frameborder="0" src="<?= $trailer_url; ?>" >
+                    </iframe>
+                </div>
         </div>
     </div>
     
@@ -34,16 +34,22 @@
     <div class="row">
 
         <div class="col-md-8 mt-3 mb-3">
-          <span>Synopsis</span> 
+            <span>Synopsis</span> 
         </div> 
         <div class="col-md-8">
           
-            <?php 
-                  echo $summary.'<br>';
-  
-            ?> 
+              <?php 
+                    echo $summary.'<br>';
+              ?> 
          </div> 
 
+    </div> 
+
+    <!-- Display seasons only if the media type is  equal to serie -->
+    <?php if (($mediaType =='serie') ): ?>
+         <h3>All Seasons</h3>
+    <?php endif; ?>
+    
 
 
 
