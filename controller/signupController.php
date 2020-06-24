@@ -22,3 +22,17 @@ function signupPage() {
 /***************************
 * ----- SIGNUP FUNCTION -----
 ***************************/
+function signup( $post ) {
+
+  $data           = new stdClass();
+  $data->email    = $post['email'];
+  $data->password = $post['password'];
+
+
+  $user           = new User( $data );
+  
+  $user->createUser();
+
+
+  require('view/auth/signupView.php');
+}

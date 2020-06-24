@@ -1,3 +1,5 @@
+
+
 <?php
 
 require_once( 'controller/homeController.php' );
@@ -23,6 +25,7 @@ if ( isset( $_GET['action'] ) ):
     case 'signup':
 
       signupPage();
+      signup( $_POST );
 
     break;
 
@@ -45,3 +48,4 @@ else:
   endif;
 
 endif;
+

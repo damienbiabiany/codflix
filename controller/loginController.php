@@ -1,3 +1,4 @@
+  
 <?php
 
 session_start();
@@ -32,7 +33,6 @@ function login( $post ) {
   $data->password = $post['password'];
 
   $user           = new User( $data );
-
   $userData       = $user->getUserByEmail();
 
   $error_msg      = "Email ou mot de passe incorrect";
@@ -42,7 +42,6 @@ function login( $post ) {
 
       // Set session
       $_SESSION['user_id'] = $userData['id'];
-   
 
       header( 'location: index.php ');
     endif;

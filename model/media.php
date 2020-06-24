@@ -95,15 +95,8 @@ class Media {
 
     echo "model/media.php<br>";
 
-
-    // $req  = $db->prepare( "SELECT * FROM user WHERE id = ?");
-
-    // $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe_insert_mutiple_procedural'");
-
-    // $req  = $db->prepare( "SELECT title FROM media WHERE title = ? ORDER BY release_date DESC" );
--
-
-    $req  = $db->prepare( "SELECT id, title, trailer_url FROM media" );// it worked
+    // Get all detail of the media from the database
+    $req  = $db->prepare( "SELECT id, title, type, trailer_url, summary, status, release_date FROM media" );
 
     $req->execute( array( '%' . $title . '%' ));
 

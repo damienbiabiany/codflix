@@ -78,7 +78,7 @@ class User {
     // Insert new user
     $req->closeCursor();
 
-    $req  = $db->prepare( "INSERT INTO user ( email, password ) VALUES ( :email, :password )" );
+    $req  = $db->prepare( "INSERT INTO user (email, password ) VALUES ( :email, :password )" );
     $req->execute( array(
       'email'     => $this->getEmail(),
       'password'  => $this->getPassword()
