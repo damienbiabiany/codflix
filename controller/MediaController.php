@@ -25,7 +25,6 @@ function mediaPage() {
   $release_date      = $medias[$mediaId-1]['release_date'];
 
 
-  $a = 5;
 
   if( isset($_GET['media'])):
     require('view/mediaDetailView.php');
@@ -36,13 +35,7 @@ function mediaPage() {
 
   $url = $_GET['url'];
 
-  if( $_GET['url'] == 'films'):
-    require('view/mediaListView.php');
-  endif;
-  
-  if( $_GET['url'] == 'series'):
-    require('view/mediaListView.php');
-  endif;
+
 
 }
 

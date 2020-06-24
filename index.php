@@ -62,7 +62,13 @@ if( $_GET['url'] == 'contact'):
 endif;
 
 // redirect to mediaPge film and series
-if(( $_GET['url'] == 'films' ) || $_GET['url'] == 'series'):
+if(( $_GET['url'] == 'films' )):
   mediaPage();
+  //require('view/mediaListView.php');
+endif;
+
+if(( $_GET['url'] == 'series' )):
+  mediaPage();
+  //require('view/mediaListView.php');
 endif;
 

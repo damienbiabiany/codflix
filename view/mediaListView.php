@@ -24,6 +24,11 @@
     </div>
 </div>
 
+
+<?php if (!( $_GET['url'] == 'films') && !( $_GET['url'] == 'series') ): ?>
+            <h2> Films et Séries disponibles</h2>
+<?php endif; ?>
+
 <?php if ( $_GET['url'] == 'films'): ?>
             <h2> Films</h2>
 <?php endif; ?>
@@ -33,13 +38,28 @@
 <?php endif; ?>
 
 <div class="media-list">
- 
 
-      
 
         <?php foreach( $medias as $media ): ?>
-            <!-- We're displaying  the media of type film--->
-            <?php if ( $media['type'] == 'film'): ?>
+ 
+              <!-- We're displaying  the media of type film (Home page)--->
+              <?php if (!( $_GET['url'] == 'films') && !( $_GET['url'] == 'series') ): ?>
+
+                <a class="item" href="index.php?media=<?= $media['id']; ?>">
+                    <div class="video">
+                        <div>
+                            <iframe allowfullscreen="" frameborder="0"
+                                    src="<?= $media['trailer_url']; ?>" ></iframe>
+                        </div>
+                    </div>
+                    <div class="title"><?= $media['title']; ?></div>
+
+                </a>
+            <?php endif; ?>
+
+
+            <!-- We're displaying  the media of type film (ONLY MOVIES)--->
+            <?php if (( $_GET['url'] == 'films') && ($media['type']=='film') ): ?>
 
                 <a class="item" href="index.php?media=<?= $media['id']; ?>">
                     <div class="video">
@@ -53,8 +73,9 @@
                 </a>
             <?php endif; ?>
 
-            <!-- We 're displaying only the media of type serie --->
-            <?php if ( $media['type'] == 'série'): ?>
+
+            <!-- We 're displaying only the media of type serie  (ONLY SERIES)--->
+            <?php if (( $_GET['url'] == 'series')  && ($media['type']=='series') ): ?>
 
                 <a class="item" href="index.php?media=<?= $media['id']; ?>">
                     <div class="video">
@@ -64,7 +85,6 @@
                         </div>
                     </div>
                     <div class="title"><?= $media['title']; ?></div>
-
                 </a>
             <?php endif; ?>
 
