@@ -93,14 +93,12 @@ class Media {
     // Open database connection
     $db   = init_db(); // from
 
-    echo "model/media.php<br>";
-
     // Get all detail of the media from the database
     $req  = $db->prepare( "SELECT id, title, type, trailer_url, summary, status, release_date FROM media" );
 
     $req->execute( array( '%' . $title . '%' ));
 
-    echo "title =". $title."<br>" ;
+    echo "title search (media.php)=". $title."<br>" ;
 
     // Close database connection
     $db   = null;

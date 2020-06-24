@@ -4,9 +4,7 @@
     <p>Swing by for a cup of coffee, or leave us a message:</p>
   </div>
   <div class="row">
-    <div class="column">
-      <img src="/w3images/map.jpg" style="width:100%">
-    </div>
+
     <div class="column">
       <form action="">
         <label for="fname">First Name</label>
