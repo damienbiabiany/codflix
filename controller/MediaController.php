@@ -34,6 +34,16 @@ function mediaPage() {
   endif;
 
 
+  $url = $_GET['url'];
+
+  if( $_GET['url'] == 'films'):
+    require('view/mediaListView.php');
+  endif;
+  
+  if( $_GET['url'] == 'series'):
+    require('view/mediaListView.php');
+  endif;
+
 }
 
 

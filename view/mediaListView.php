@@ -13,12 +13,31 @@
     </div>
 </div>
 
+
+
+<div class="row">
+    <div class="col-md-4 offset-md-8">
+        <ul>
+            <li class="active"><a href="index.php?url=films">Films</a></li>
+            <li><a href="index.php?url=series">Séries</a></li>
+        </ul>
+    </div>
+</div>
+
+<?php if ( $_GET['url'] == 'films'): ?>
+            <h2> Films</h2>
+<?php endif; ?>
+
+<?php if (  $_GET['url'] == 'series'): ?>
+            <h2> Séries </h2>
+<?php endif; ?>
+
 <div class="media-list">
+ 
 
-  
-        
+      
+
         <?php foreach( $medias as $media ): ?>
-
             <!-- We're displaying  the media of type film--->
             <?php if ( $media['type'] == 'film'): ?>
 

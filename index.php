@@ -60,3 +60,9 @@ endif;
 if( $_GET['url'] == 'contact'):
   require('view/contactView.php');
 endif;
+
+// redirect to mediaPge film and series
+if(( $_GET['url'] == 'films' ) || $_GET['url'] == 'series'):
+  mediaPage();
+endif;
+
