@@ -22,7 +22,7 @@ function mediaPage() {
   $title        = $medias[$mediaId-1]['title'];
   $status       = $medias[$mediaId-1]['status'];
   $summary      = $medias[$mediaId-1]['summary'];
-
+  $release_date      = $medias[$mediaId-1]['release_date'];
 
 
   if( isset($_GET['media'])):
