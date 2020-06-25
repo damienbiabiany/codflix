@@ -65,6 +65,8 @@ function deleteHistory() {
     $historique_id = explode('=', $second_parameters)[1];
 
 
+    $user_id =  $_SESSION['user_id'];
+
     echo 'type_of_deletion ='.$type_of_deletion.'<br>';
     echo 'historique_id    ='.$historique_id.'<br>';
 
@@ -73,12 +75,19 @@ function deleteHistory() {
   
     if ($type_of_deletion == 'delete'):
         $historique -> deleteHistoryById($historique_id );
+        header( 'location: index.php?url=history');
+       
     else:
-        $historique -> deleteAllHistory( );
+        $historique -> deleteAllHistory( $user_id);
+
+        header( 'location: index.php?url=history');
+        
     endif;
 
 
     // REDIRECT TO HISTORY PA
+
+   
     
   
   

@@ -122,12 +122,13 @@ class History {
   /*********************************************************
   * ------- EMPTY ALL HISTORY USER DATA BY USER ID -------
   **********************************************************/
-  function deleteAllHistory() {
+  function deleteAllHistory($user_id) {
 
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "DELETE FROM history WHERE id = ?");
+    // delete all history for connected user 
+    $req  = $db->prepare( "DELETE FROM history WHERE user_id = $user_id");
     $req->execute();
 
     // Close databse connection

@@ -38,23 +38,22 @@
     
     
     <div class="row">
-        <div class="col-md-8">
-        <p>Release date :<?php echo $release_date.'<br>';?> </p>
-    </div> 
+            <div class="col-md-8">
+                 <p>Release date :<?php echo $release_date.'<br>';?> </p>
+             </div> 
 
-    <div class="row">
 
         <div class="col-md-8 mt-3 mb-3">
             <span>Synopsis</span> 
         </div> 
         <div class="col-md-8">
-          
-              <?php 
+            
+                <?php 
                     echo $summary.'<br>';
-              ?> 
-         </div> 
-
-    </div> 
+                ?> 
+            </div> 
+     </div> 
+    
 
     <!-- Display seasons only if the media type is  equal to serie -->
     <?php if (($mediaType =='serie') ): ?>
