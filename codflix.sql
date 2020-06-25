@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 24, 2020 at 10:05 PM
+-- Generation Time: Jun 25, 2020 at 08:45 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -49,6 +49,13 @@ CREATE TABLE `history` (
   `watch_duration` int(11) NOT NULL DEFAULT '0' COMMENT 'in seconds'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `history`
+--
+
+INSERT INTO `history` (`id`, `user_id`, `media_id`, `start_date`, `finish_date`, `watch_duration`) VALUES
+(1, 2, 1, '2020-06-10 03:06:11', '2020-06-09 03:06:11', 30);
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +84,11 @@ INSERT INTO `media` (`id`, `genre_id`, `title`, `type`, `status`, `release_date`
 (4, 1, 'Ip Man 3', 'film', 'Média publié', '2015-12-16', 'When a band of brutal gangsters led by a crooked property developer make a play to take over a local school, Master Ip is forced to take a stand.', 'https://www.youtube.com/embed/_wUcbN34leM?autoplay=true'),
 (5, 2, 'A Quiet Place', 'film', 'Média publié', '2018-06-20', 'In a post-apocalyptic world, a family is forced to live in silence while hiding from monsters with ultra-sensitive hearing.', 'https://www.youtube.com/embed/p9wE8dyzEJE?autoplay=true'),
 (6, 1, 'Kingsman', 'film', 'Média publié', '2015-02-18', 'A spy organisation recruits a promising street kid into the agency\'s training program, while a global threat emerges from a twisted tech genius.', 'https://www.youtube.com/embed/kl8F-8tR8to?autoplay=true'),
-(7, 2, 'Us', 'film', 'Média publié', '2019-03-21', 'A family\'s serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them.\r\n', 'https://www.youtube.com/embed/hNCmb-4oXJA?autoplay=true');
+(7, 2, 'Us', 'film', 'Média publié', '2019-03-21', 'A family\'s serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them.\r\n', 'https://www.youtube.com/embed/hNCmb-4oXJA?autoplay=true'),
+(8, 3, 'Locke & Key', 'serie', 'Média publié', '2020-02-07', 'After their father is murdered under mysterious circumstances, the three Locke siblings and their mother move into their ancestral home, Keyhouse, which they discover is full of magical keys that may be connected to their father\'s death.', 'https://www.youtube.com/embed/Gc4iXDmSC_E?autoplay=true'),
+(9, 1, 'Peaky Blinders', 'serie', 'Média publié', '2013-09-13', 'A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.', 'https://www.youtube.com/embed/oVzVdvGIC7U?autoplay=true'),
+(10, 3, 'Game of Thrones', 'serie', 'Média publié', '2011-04-17', 'Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.', 'https://www.youtube.com/embed/gcTkNV5Vg1E?autoplay=true'),
+(11, 2, 'The WALKING DEAD', 'serie', 'Média publié', '2010-10-31', 'Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins and must lead a group of survivors to stay alive.\r\n', 'https://www.youtube.com/embed/An0bZpuhiBE?autoplay=true');
 
 -- --------------------------------------------------------
 
@@ -101,7 +112,9 @@ INSERT INTO `user` (`id`, `email`, `password`) VALUES
 (3, 'aaaa@gmail.com', 'com'),
 (4, 'vvv@gmail.com', 'ccc'),
 (5, 'aaazzzzz@gmail.com', 'zzzzzz'),
-(6, 'mmmm@gmail.com', 'vert');
+(6, 'mmmm@gmail.com', 'vert'),
+(7, 'a@gmail.com', 'test'),
+(8, 'azaza@gmail.com', 'aza');
 
 --
 -- Indexes for dumped tables
@@ -148,19 +161,19 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

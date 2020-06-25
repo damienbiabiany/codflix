@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar">
-        <h2 class="title">Bienvenue</h2>
+        <h2 class="title">Bienvenue <?php $userMailAccount ;?></h2>
         <div class="sidebar-menu">
           <ul>
             <li class="active"><a href="/CodFlix/">Médias</a></li>

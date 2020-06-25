@@ -20,6 +20,4 @@ function homePage() {
   endif;
 
 
-
-
 }

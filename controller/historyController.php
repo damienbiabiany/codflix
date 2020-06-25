@@ -23,7 +23,7 @@ function historyPage() {
         $histories = History::filterMedias( $search ) ;
         
         // Get current user
-       echo $_SESSION['user_id'];
+        echo $_SESSION['user_id'];
 
         // Get the user account  (connectded user)
         $user           = new User( );
@@ -31,7 +31,7 @@ function historyPage() {
 
         echo  $userData["email"] ;
         echo  $userData["password"] ;
-        
+
         // var_dump( $userData);
 
         require('view/historyView.php');
