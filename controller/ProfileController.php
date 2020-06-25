@@ -15,12 +15,7 @@ function profilePage() {
      
         // Get data from media table 
         $medias = Media::filterMedias( $search );
-      
-        // Get data from history table 
-        $histories = History::filterMedias( $search ) ;
-
-        // Get data from user table 
-        $histories = History::filterMedias( $search ) ;
+    
         
         // Get current user data
         $current_connected_user = $_SESSION['user_id'];

@@ -7,11 +7,16 @@ require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
 require_once( 'controller/historyController.php' );
-require_once( 'controller/ProfileController.php' );
+require_once( 'controller/profileController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
 ***************************/
+
+//echo  $_GET['action'];
+//echo  $_GET['action'];
+//echo  explode('&', $_SERVER['QUERY_STRING']);
+
 
 if ( isset( $_GET['action'] ) ):
 
@@ -42,6 +47,14 @@ if ( isset( $_GET['action'] ) ):
       logout();
 
     break;
+
+
+    case 'history':
+
+      deleteHistory();
+
+    break;
+
 
   endswitch;
 
@@ -91,4 +104,6 @@ if(( $_GET['url'] == 'profile' )):
   profilePage();
   //require('view/mediaListView.php');
 endif;
+
+
 

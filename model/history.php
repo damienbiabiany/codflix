@@ -78,7 +78,7 @@ class History {
   * -------- GET LIST --------
   ***************************/
 
-  public static function filterMedias( $user_id) {
+  public static function filterHistories( $user_id) {
 
     // Open database connection
     $db   = init_db(); // from
@@ -93,6 +93,47 @@ class History {
     $db   = null;
 
     return $req->fetchAll();
+
+  }
+
+
+
+  /******************************************************
+   * ------- DELETE HISTORY USER DATA BY USER ID -------
+  *******************************************************/
+  function deleteHistoryById($id) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "DELETE FROM history WHERE id = ?");
+    $req->execute( array( $id ));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
+
+
+
+  }
+
+
+  /*********************************************************
+  * ------- EMPTY ALL HISTORY USER DATA BY USER ID -------
+  **********************************************************/
+  function deleteAllHistory() {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "DELETE FROM history WHERE id = ?");
+    $req->execute();
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
 
   }
 

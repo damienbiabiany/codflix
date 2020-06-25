@@ -49,11 +49,11 @@
                             </div>
 
                             <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-8">
-                                <a href="index.php?action=login" class="btn btn-block bg-blue">Mettre à jour votre compte</a>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <a href="index.php?action=login" class="btn btn-block bg-blue">Mettre à jour votre compte</a>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
 
                             <span class="error-msg">
