@@ -22,15 +22,16 @@ function historyPage() {
         // Get data from user table 
         $histories = History::filterMedias( $search ) ;
         
-        // Get current user
-        echo $_SESSION['user_id'];
+        // Get current user data
+        $current_connected_user = $_SESSION['user_id'];
+        echo "session id =".$_SESSION['user_id']."<br>";
 
         // Get the user account  (connectded user)
         $user           = new User( );
         $userData       = $user->getUserById( $_SESSION['user_id']);
 
-        echo  $userData["email"] ;
-        echo  $userData["password"] ;
+        // echo  $userData["email"] ;
+        // echo  $userData["password"] ;
 
         // var_dump( $userData);
 

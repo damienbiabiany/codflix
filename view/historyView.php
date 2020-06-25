@@ -7,37 +7,44 @@
 
         <h1>History Page</h1>
 
+        <h2><?= "User mail   :".$userData["email"]."<br>";?></h2>
+
         <div class="container-fluid">
+        
             <div class="row content">
 
-
-                <!-- Display the history of the media  for a specific user (current connected user)-->
+                <!-- Display the history of the media for a specific user (current connected user)-->
                 <?php foreach( $histories as $history ): ?>
-                    <div class="col-md-6">
-                        <?= "user_id         = ".$history["user_id"]."<br>";?>
-                        <?= "media_id        = ".$history["media_id"]."<br>";?>
-                        <?= "start_date      = ".$history["start_date"]."<br>"; ?>
-                        <?= "finish_date     = ".$history["finish_date"]."<br>"; ?>   
-                        <?= "watch_duration  = ".$history["watch_duration"]." secondes. <br>"; ?>   
-                    </div>
 
-                    <!-- Display the trailer of the media (current connected user) -->
-                    <?php foreach( $medias as $media ): ?>
+                    <?php if ($current_connected_user == $history["user_id"] ): ?>
 
-                        <?php if ($media['id'] == $history["media_id"] ): ?>
+                        <div class="col-md-6">
+                            <?= "user_id         = ".$history["user_id"]."<br>";?>
+                            <?= "media_id        = ".$history["media_id"]."<br>";?>
+                            <?= "start_date      = ".$history["start_date"]."<br>"; ?>
+                            <?= "finish_date     = ".$history["finish_date"]."<br>"; ?>   
+                            <?= "watch_duration  = ".$history["watch_duration"]." secondes. <br>"; ?>   
+                        </div>
 
-                            <div class="col-md-6 video">
-                                <div>
-                                    <iframe allowfullscreen="" frameborder="0"
-                                            src="<?= $media['trailer_url']; ?>" ></iframe>
+                        <!-- Display the trailer of the media (current connected user) -->
+                        <?php foreach( $medias as $media ): ?>
+
+                            <?php if ($media['id'] == $history["media_id"] ): ?>
+
+                                <div class="col-md-6 video">
+                                    <div>
+                                        <iframe allowfullscreen="" frameborder="0"
+                                                src="<?= $media['trailer_url']; ?>" ></iframe>
+                                    </div>
                                 </div>
-                            </div>
 
-                        <?php endif; ?>
+                            <?php endif; ?>
 
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
 
-                    <?php endforeach; ?>
+                    <?php endif; ?>
+
+                <?php endforeach; ?>
                 
                 
             </div>
