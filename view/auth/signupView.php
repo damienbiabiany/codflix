@@ -10,9 +10,6 @@
 
           <form method="post" action="index.php?action=signup" class="custom-form">
 
-
-            
-
             <div class="form-group">
               <label for="email">Adresse email</label>
               <input type="email" name="email" value="" id="email" class="form-control" required/>
