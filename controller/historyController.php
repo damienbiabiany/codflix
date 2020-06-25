@@ -1,6 +1,7 @@
 <?php
 
 require_once( 'model/history.php' );
+require_once( 'model/media.php' );
 
 /***************************
 * ----- LOAD HOME PAGE -----
@@ -12,11 +13,18 @@ function historyPage() {
   
         echo $_GET['url'];
 
-        $history = History::filterMedias( $search ) ;
+        $histories = History::filterMedias( $search ) ;
         
-        echo $history;
+        //echo $histories;
 
-        var_dump($history);
+        //var_dump($histories);
+
+
+
+
+        $medias = Media::filterMedias( $search );
+
+    
 
 
         require('view/historyView.php');
