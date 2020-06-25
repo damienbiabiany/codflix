@@ -21,6 +21,17 @@
             <li class="active"><a href="index.php?url=films">Films</a></li>
             <li><a href="index.php?url=series">Séries</a></li>
         </ul>
+        
+
+        
+    </div>
+    <div class="col-md-4">
+        <label for="pet-select">Genre:</label>
+            <select name="forma" onchange="location = this.value;">
+                <?php foreach( $genres as $genre ): ?>
+                    <option value="index.php?genre=<?= $genre['name'];?>"><?= $genre['name'];?></option> 
+                <?php endforeach; ?>
+            </select>
     </div>
 </div>
 

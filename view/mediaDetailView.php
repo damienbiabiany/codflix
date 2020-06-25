@@ -19,11 +19,7 @@
             <li class="active mr-3"><a href="index.php?url=films">Films</a></li>
             <li><a href="index.php?url=series">Séries</a></li>
         </ul>
-        <select name="forma" onchange="location = this.value;">
-            <option value="Home.php">Home</option>
-            <option value="Contact.php">Contact</option>
-            <option value="Sitemap.php">Sitemap</option>
-        </select>
+   
     </div>
 </div>
 

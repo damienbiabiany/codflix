@@ -1,6 +1,7 @@
 <?php
 
 require_once( 'model/media.php' );
+require_once( 'model/genre.php' );
 
 /***************************
 * ----- LOAD HOME PAGE -----
@@ -15,6 +16,8 @@ function mediaPage() {
 
   $mediaId = $_GET['media'];
 
+
+
   //echo   'mediaId ='.$mediaId;
 
   $mediaType    = $medias[$mediaId-1]['type'];
@@ -24,7 +27,8 @@ function mediaPage() {
   $summary      = $medias[$mediaId-1]['summary'];
   $release_date      = $medias[$mediaId-1]['release_date'];
 
-
+   // Genre
+   $genres = Genre::filterGenres( $search );
 
   if( isset($_GET['media'])):
     require('view/mediaDetailView.php');
@@ -34,6 +38,8 @@ function mediaPage() {
 
 
   $url = $_GET['url'];
+
+ 
 
 
 
