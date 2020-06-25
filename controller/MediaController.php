@@ -39,8 +39,6 @@ function mediaPage() {
 
   $url = $_GET['url'];
 
- 
-
 
 
 }
