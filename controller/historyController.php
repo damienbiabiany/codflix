@@ -11,7 +11,7 @@ function historyPage() {
 
     $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
   
-        echo $_GET['url'];
+        // echo $_GET['url'];
 
         $histories = History::filterMedias( $search ) ;
         
