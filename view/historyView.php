@@ -32,9 +32,12 @@
                             <?php if ($media['id'] == $history["media_id"] ): ?>
 
                                 <div class="col-md-6 video">
+                                   <div class="title"><?= $media['title']; ?></div>
+
                                     <div>
                                         <iframe allowfullscreen="" frameborder="0"
                                                 src="<?= $media['trailer_url']; ?>" ></iframe>
+
                                     </div>
                                 </div>
 

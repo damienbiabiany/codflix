@@ -24,11 +24,12 @@ function historyPage() {
         
         // Get current user data
         $current_connected_user = $_SESSION['user_id'];
-        echo "session id =".$_SESSION['user_id']."<br>";
+        //echo "session id =".$_SESSION['user_id']."<br>";
 
         // Get the user account  (connectded user)
         $user           = new User( );
         $userData       = $user->getUserById( $_SESSION['user_id']);
+
 
         // echo  $userData["email"] ;
         // echo  $userData["password"] ;
