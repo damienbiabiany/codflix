@@ -7,6 +7,7 @@ require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
 require_once( 'controller/historyController.php' );
+require_once( 'controller/ProfileController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -76,6 +77,12 @@ endif;
 
 if(( $_GET['url'] == 'history' )):
   historyPage();
+  //require('view/mediaListView.php');
+endif;
+
+
+if(( $_GET['url'] == 'profile' )):
+  ProfilPage();
   //require('view/mediaListView.php');
 endif;
 
