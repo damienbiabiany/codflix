@@ -24,27 +24,27 @@ if ( isset( $_GET['action'] ) ):
 
     case 'login':
 
-      if ( !empty( $_POST ) ) login( $_POST );
-      else loginPage();
+        if ( !empty( $_POST ) ) login( $_POST );
+        else loginPage();
 
     break;
 
     case 'signup':
 
-      signupPage();
-      signup( $_POST );
+        signupPage();
+        signup( $_POST );
 
     break;
 
     case 'logout':
 
-      logout();
+        logout();
 
     break;
 
     case 'logout':
 
-      logout();
+        logout();
 
     break;
 
@@ -54,6 +54,13 @@ if ( isset( $_GET['action'] ) ):
       deleteHistory();
 
     break;
+
+    case 'profile':
+
+      updateAccount($_POST );
+
+    break;
+
 
 
   endswitch;

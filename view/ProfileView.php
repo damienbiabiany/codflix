@@ -23,11 +23,11 @@
                         <div class="auth-container">
         
 
-                        <form method="post" action="index.php?action=signup" class="custom-form">
+                        <form method="post" action="index.php?action=profile" class="custom-form">
 
                             <div class="form-group">
                                 <label for="email"> Changer d'adresse email</label>
-                                <input type="email" name="email" value="" id="email" class="form-control" />
+                                <input type="email" name="new-email" value="" id="email" class="form-control" />
                             </div>
 
                             <div class="form-group">
@@ -42,7 +42,7 @@
 
                             <div class="form-group">
                             <label for="new-password_confirm">Confirmez votre nouveau mot de passe</label>
-                            <input type="new-password" name="new-password_confirm" id="new-password_confirm" class="form-control" />
+                            <input type="new-password" name="new-password-confirm" id="new-password_confirm" class="form-control" />
                             
                             
                         
@@ -50,11 +50,16 @@
 
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-8">
-                                        <a href="index.php?action=login" class="btn btn-block bg-blue">Mettre à jour votre compte</a>
+                                    <div class="col-md-6">
+                                        <input type="submit" name=""  value="Mettre à jour" class="btn-block bg-blue" />
                                     </div>
+                                    <div class="col-md-6">
+                                        <a href="index.php" class="btn btn-block bg-blue">Accueil</a>
+                                    </div>
+                                                            
                                 </div>
                             </div>
+                            
 
                             <span class="error-msg">
                             <?= isset( $error_msg ) ? $error_msg : null;?>

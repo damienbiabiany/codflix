@@ -129,13 +129,13 @@ class User {
   * ------- UPDATE USER EMAIL DATA BY ID -------
   ****************************************/
 
-  public function updateEmailUserByID($id ) {
+  public function updateEmailUserByID($user_id, $new_mail ) {
 
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
-    $req->execute( array( $this->getEmail() ));
+    $req  = $db->prepare( "UPDATE user SET email = ? WHERE id = ?" );
+    $req->execute(array( $new_mail, $user_id));
 
     // Close databse connection
     $db   = null;
@@ -147,13 +147,13 @@ class User {
   * ------- UPDATE USER PASSWORD DATA BY ID -------
   ****************************************/
 
-  public function updatePasswordlUserByID($id ) {
+  public function updatePasswordlUserByID( $user_id, $new_password ) {
 
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
-    $req->execute( array( $this->getEmail() ));
+    $req  = $db->prepare( "UPDATE user SET password = $new_password WHERE id = $user_id" );
+    $req->execute();
 
     // Close databse connection
     $db   = null;
@@ -167,13 +167,13 @@ class User {
   * ------- DELETE USER DATA BY ID -------
   ****************************************/
 
-  public function deleteUserByID($id ) {
+  public function deleteUserByID($user_id) {
 
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
-    $req->execute( array( $this->getEmail() ));
+    $req  = $db->prepare( "DELETE FROM user WHERE id = $user_id" );
+    $req->execute(array( $user_id));
 
     // Close databse connection
     $db   = null;
