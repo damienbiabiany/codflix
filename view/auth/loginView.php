@@ -12,18 +12,18 @@
 
             <div class="form-group">
               <label for="email">Adresse email</label>
-              <input type="email" name="email" value="" id="email" class="form-control" />
+              <input type="email" name="email" value="" id="email" class="form-control" required  />
             </div>
 
             <div class="form-group">
               <label for="password">Mot de passe</label>
-              <input type="password" name="password" id="password" class="form-control" />
+              <input type="password" name="password" id="password" class="form-control"required  />
             </div>
 
             <div class="form-group">
               <div class="row">
                 <div class="col-md-6">
-                  <input type="submit" name="Valider" class="btn btn-block bg-red" />
+                  <input type="submit" name="Valider" class="btn btn-block bg-red" required />
                 </div>
                 <div class="col-md-6">
                   <a href="index.php?action=signup" class="btn btn-block bg-blue">Inscription</a>

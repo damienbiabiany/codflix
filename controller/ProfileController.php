@@ -53,35 +53,45 @@ function updateAccount( $post ) {
     $new_mail             = $post['new-email'];
     $new_password         = $post['new-password'];
     $new_confirm_password = $post['new-password-confirm'];   
+    $error_               = null;
 
-
-    echo "user_id               =".$user_id ;
-    echo "new_mail              =".$new_mail   ;
-    echo "new_password          =".$new_password ;
-    echo "new_confirm_password  =".$new_confirm_password ;
+    // echo "user_id               =".$user_id ;
+    // echo "new_mail              =".$new_mail   ;
+    // echo "new_password          =".$new_password ;
+    // echo "new_confirm_password  =".$new_confirm_password ;
 
     // -------  Condition for update Email ------- 
-    $user->updateEmailUserByID($user_id, $new_mail );
+
+    echo 'POST ='.$post;
+    echo 'POST ='.isset($_POST);
+    var_dump(isset($_POST));
+    var_dump(empty($_POST));
 
 
-    // ------- Condition for update password -----
 
-    $user->updatePasswordlUserByID($user_id, $new_password);
-
-
-    // ------- Condition for delete user account -----
- 
-    $user->deleteUserByID($user_id);
- 
-
+     $user->updateEmailUserByID($user_id, $new_mail );
+      
+       
     
-    //require('view/profileView.php');
+    if (!($new_password == $new_confirm_password)):
+        $error_= "password doesn't match";
+
+        // ------- Condition for update password -----
+
+        $user->updatePasswordlUserByID($user_id, $new_password);
+
+        require('view/profileView.php');
+    endif;
+    
+
+    require('view/profileView.php');
+    
+    
 }
 
 
 
-function deleteAccount(  ) {
-
+function deleteAccount( ) {
 
     // Get current user data
     $user           = new User( );
