@@ -44,6 +44,10 @@
       </div>
     </div>
             
+    <?php
+        mail('damienbiabiany@yahoo.com', 'le sujet', 'le message');
+    ?>
+
     </div>
   
     
