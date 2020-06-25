@@ -42,9 +42,10 @@ function historyPage() {
 }
 
 
-/***************************
-* ----- HISTORY FUNCTIONS -----
-***************************/
+
+/******************************************************
+ * ------- DELETE HISTORY USER DATA BY  USER ID -------
+*******************************************************/
 function deleteHistoryById( $id) {
   
   
@@ -52,6 +53,9 @@ function deleteHistoryById( $id) {
 }
 
 
+/*********************************************************
+ * ------- EMPTY ALL HISTORY USER DATA BY USER ID -------
+**********************************************************/
 function deleteAllHistory() {
 
 
