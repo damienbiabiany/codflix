@@ -40,3 +40,21 @@ function historyPage() {
     
 
 }
+
+
+/***************************
+* ----- HISTORY FUNCTIONS -----
+***************************/
+function deleteHistoryById( $id) {
+  
+  
+    
+}
+
+
+function deleteAllHistory() {
+
+
+  
+}
+

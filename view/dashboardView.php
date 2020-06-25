@@ -20,7 +20,7 @@
           <ul>
             <li class="active"><a href="/CodFlix/">Médias</a></li>
             <li><a href="index.php?url=profile">Profile</a></li>
-            <li><a href="index.php?url=history">History</a></li>
+            <li><a href="index.php?url=history">Historique</a></li>
             <li><a href="index.php?url=contact">Nous contacter</a></li>
             <li><a href="index.php?action=logout">Me déconnecter</a></li>
           </ul>

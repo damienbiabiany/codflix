@@ -37,6 +37,12 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'logout':
+
+      logout();
+
+    break;
+
   endswitch;
 
 else:
@@ -82,7 +88,7 @@ endif;
 
 
 if(( $_GET['url'] == 'profile' )):
-  ProfilPage();
+  profilePage();
   //require('view/mediaListView.php');
 endif;
 

@@ -52,7 +52,16 @@
                                     src="<?= $media['trailer_url']; ?>" ></iframe>
                         </div>
                     </div>
-                    <div class="title"><?= $media['title']; ?></div>
+                    <div class="title"><?= $media['title']; ?> </div>
+
+                    <?php if ( ($media['type']=='film') ): ?>
+                        <div class="title"> INFO (film) </div>  
+                    <?php endif; ?>
+
+                    <?php if ( ($media['type']=='serie') ): ?>
+                        <div class="title"> INFO (season, episodes) </div>
+                    <?php endif; ?>
+
 
                 </a>
             <?php endif; ?>
@@ -68,8 +77,8 @@
                                     src="<?= $media['trailer_url']; ?>" ></iframe>
                         </div>
                     </div>
-                    <div class="title"><?= $media['title']; ?>INFOS</div>
-                
+                    <div class="title"><?= $media['title']; ?></div>
+                    <div class="title"> INFO </div>                
                 </a>
             <?php endif; ?>
 
@@ -85,6 +94,7 @@
                         </div>
                     </div>
                     <div class="title"><?= $media['title']; ?></div>
+                    <div class="title"> INFO (season, episodes) </div>
                 </a>
             <?php endif; ?>
 
