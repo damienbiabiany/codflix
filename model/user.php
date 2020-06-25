@@ -125,4 +125,61 @@ class User {
     return $req->fetch();
   }
 
+    /***************************************
+  * ------- UPDATE USER EMAIL DATA BY ID -------
+  ****************************************/
+
+  public function updateEmailUserByID($id ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
+    $req->execute( array( $this->getEmail() ));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
+  }
+
+      /***************************************
+  * ------- UPDATE USER PASSWORD DATA BY ID -------
+  ****************************************/
+
+  public function updatePasswordlUserByID($id ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
+    $req->execute( array( $this->getEmail() ));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
+  }
+
+
+
+  /***************************************
+  * ------- DELETE USER DATA BY ID -------
+  ****************************************/
+
+  public function deleteUserByID($id ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
+    $req->execute( array( $this->getEmail() ));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch();
+  }
+
+
 }
