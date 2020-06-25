@@ -95,6 +95,19 @@
                 <?php endif; ?>
 
             <?php endforeach; ?>
+
+
+            <?php $seasonsJoin ?>
+            <?php foreach( $seasonsJoin as $j ): ?>
+                
+                <!-- We're displaying  the media of type film (Home page)--->
+
+
+                <?php $j ?>
+
+            
+
+            <?php endforeach; ?>
         </div>
 
     </div> 

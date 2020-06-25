@@ -98,7 +98,7 @@ class Media {
 
     $req->execute( array( '%' . $title . '%' ));
 
-    echo "title search (media.php)=". $title."<br>" ;
+    // echo "title search (media.php)=". $title."<br>" ;
 
     // Close database connection
     $db   = null;

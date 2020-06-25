@@ -16,7 +16,7 @@ function mediaPage() {
   $medias = Media::filterMedias( $search );
 
   $mediaId = $_GET['media'];
-  
+
   $mediaType    = $medias[$mediaId-1]['type'];
   $trailer_url  = $medias[$mediaId-1]['trailer_url'];
   $title        = $medias[$mediaId-1]['title'];
@@ -32,6 +32,13 @@ function mediaPage() {
   // Sesons
   $seasons = Season::filterSeasons( $search );
    
+  $seasonsJoin = Season::filterSeasonsByMediaId(  $mediaId  );
+
+
+   //var_dump( $seasonsJoin  );
+
+   var_dump($seasonsJoin[ $mediaId ]);
+
   //var_dump( $seasons );
 
 

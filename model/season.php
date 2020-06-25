@@ -82,10 +82,32 @@ class Season {
     // Open database connection
     $db   = init_db(); // from
 
-    // Get all detail of the media from the database
+    // Get all detail of the season from the database
     $req  = $db->prepare( "SELECT id, media_id, season_num, release_date, trailer_url FROM season" );
 
     $req->execute( array( '%' . $user_id . '%' ));
+
+    // echo "title search (media.php)=". $title."<br>" ;
+
+    // Close database connection
+    $db   = null;
+
+    return $req->fetchAll();
+
+  }
+
+
+  public static function filterSeasonsByMediaId( $media_id) {
+
+   
+    // Open database connection
+    $db   = init_db(); // from
+
+    // Get all detail of the media from the database
+    $req  = $db->prepare( "SELECT media.id, media.title FROM media
+    INNER JOIN season ON media.id=season.media_id;" );
+
+    $req->execute( array( '%' .$media_id . '%' ));
 
     // echo "title search (media.php)=". $title."<br>" ;
 
