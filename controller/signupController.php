@@ -25,14 +25,27 @@ function signupPage() {
 function signup( $post ) {
 
   $data           = new stdClass();
+
   $data->email    = $post['email'];
+
   $data->password = $post['password'];
 
+  $data->password_confirm = $post['password_confirm'];
 
-  $user           = new User( $data );
   
-  $user->createUser();
+  // Create user only there is a password confirmation 
+  if($post['password_confirm'] ==  $post['password']):
+
+    $user = new User( $data );
+  
+    $user->createUser();
 
 
-  require('view/auth/signupView.php');
+    
+    require('view/auth/signupView.php');
+  endif;
+
+
+
+  
 }

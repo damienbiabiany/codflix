@@ -52,6 +52,18 @@
 
 }
 
+.movie-series-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.item:hover {
+    color: red;
+}
+
 @media screen and (max-width: 768px) {
     .media-list .item {
         flex-basis: 100%;

@@ -16,8 +16,8 @@
 
 
 <div class="row">
-    <div class="col-md-4 offset-md-8">
-        <ul>
+    <div class="col-md-4">
+        <ul class="movie-series-menu">
             <li class="active"><a href="index.php?url=films">Films</a></li>
             <li><a href="index.php?url=series">Séries</a></li>
         </ul>
@@ -68,7 +68,7 @@
                                     src="<?= $media['trailer_url']; ?>" ></iframe>
                         </div>
                     </div>
-                    <div class="title"><?= $media['title']; ?></div>
+                    <div class="title"><?= $media['title']; ?>INFOS</div>
                 
                 </a>
             <?php endif; ?>

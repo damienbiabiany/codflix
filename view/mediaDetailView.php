@@ -11,6 +11,17 @@
     <link href="public/css/layout/layout.css" rel="stylesheet" />
   </head>
 
+
+
+<div class="row">
+    <div class="col-md-4">
+        <ul class="movie-series-menu">
+            <li class="active"><a href="index.php?url=films">Films</a></li>
+            <li><a href="index.php?url=series">Séries</a></li>
+        </ul>
+    </div>
+</div>
+
 <div class="media-list">
 
     <div class="row">
