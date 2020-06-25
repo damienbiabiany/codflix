@@ -11,4 +11,6 @@
 Nothing else is required. You can now start your development
 
 
-The sql file database  used during the test is in root direcotry
+_____________
+
+THE SQL DATABASE FILE THAT I USED  FOR THE PROJECT IS IN THE ROOT DIRECOTORY

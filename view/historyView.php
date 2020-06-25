@@ -21,16 +21,16 @@
                         <?= "watch_duration  = ".$history["watch_duration"]." secondes. <br>"; ?>   
                     </div>
 
-                    <!-- Display the trailer of the media (current connected user)-->
+                    <!-- Display the trailer of the media (current connected user) -->
                     <?php foreach( $medias as $media ): ?>
 
                         <?php if ($media['id'] == $history["media_id"] ): ?>
 
                             <div class="col-md-6 video">
-                                    <div>
-                                        <iframe allowfullscreen="" frameborder="0"
-                                                src="<?= $media['trailer_url']; ?>" ></iframe>
-                                    </div>
+                                <div>
+                                    <iframe allowfullscreen="" frameborder="0"
+                                            src="<?= $media['trailer_url']; ?>" ></iframe>
+                                </div>
                             </div>
 
                         <?php endif; ?>
