@@ -61,6 +61,12 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'profiledelete':
+
+      deleteAccount();
+
+    break;
+
 
 
   endswitch;

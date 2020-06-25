@@ -56,6 +56,9 @@
                                     <div class="col-md-6">
                                         <a href="index.php" class="btn btn-block bg-blue">Accueil</a>
                                     </div>
+                                    <div class="col-md-6">
+                                        <a href="index.php?action=profiledelete" class="btn btn-block bg-blue">Supprimer Compte</a>
+                                    </div>
                                                             
                                 </div>
                             </div>

@@ -116,7 +116,7 @@ class User {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?" );
+    $req  = $db->prepare( "SELECT * FROM user WHERE email = ?");
     $req->execute( array( $this->getEmail() ));
 
     // Close databse connection
@@ -134,7 +134,7 @@ class User {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "UPDATE user SET email = ? WHERE id = ?" );
+    $req  = $db->prepare( "UPDATE user SET email = ? WHERE id = ?");
     $req->execute(array( $new_mail, $user_id));
 
     // Close databse connection
@@ -152,8 +152,8 @@ class User {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "UPDATE user SET password = $new_password WHERE id = $user_id" );
-    $req->execute();
+    $req  = $db->prepare( "UPDATE user SET password = ? WHERE id = ?");
+    $req->execute(array( $new_password, $user_id));
 
     // Close databse connection
     $db   = null;
@@ -172,7 +172,7 @@ class User {
     // Open database connection
     $db   = init_db();
 
-    $req  = $db->prepare( "DELETE FROM user WHERE id = $user_id" );
+    $req  = $db->prepare( "DELETE FROM user WHERE id = ?" );
     $req->execute(array( $user_id));
 
     // Close databse connection

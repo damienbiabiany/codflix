@@ -42,7 +42,7 @@ function signup( $post ) {
 
 
     
-    require('view/auth/signupView.php');
+    header( 'location: index.php?action=login');
   endif;
 
 
