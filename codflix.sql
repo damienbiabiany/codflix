@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 25, 2020 at 08:45 AM
+-- Generation Time: Jun 25, 2020 at 06:33 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -13,6 +13,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `codflix`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `episode`
+--
+
+CREATE TABLE `episode` (
+  `id` int(11) NOT NULL,
+  `media_id` int(11) NOT NULL,
+  `season_id` int(11) NOT NULL,
+  `episode_num` int(11) NOT NULL,
+  `release_date` int(11) NOT NULL,
+  `summary` longtext NOT NULL,
+  `trailer_url` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -32,7 +48,9 @@ CREATE TABLE `genre` (
 INSERT INTO `genre` (`id`, `name`) VALUES
 (1, 'Action'),
 (2, 'Horreur'),
-(3, 'Science-Fiction');
+(3, 'Science-Fiction'),
+(4, 'Comédie'),
+(5, 'Biopic');
 
 -- --------------------------------------------------------
 
@@ -54,7 +72,9 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id`, `user_id`, `media_id`, `start_date`, `finish_date`, `watch_duration`) VALUES
-(1, 2, 1, '2020-06-10 03:06:11', '2020-06-09 03:06:11', 30);
+(2, 6, 3, '2020-06-17 10:52:06', '2020-06-30 10:52:06', 159),
+(22, 12, 5, '2020-06-10 03:06:11', '2020-06-10 14:07:25', 45),
+(23, 12, 8, '2020-06-10 14:07:25', '2020-06-10 14:07:25', 333);
 
 -- --------------------------------------------------------
 
@@ -93,6 +113,40 @@ INSERT INTO `media` (`id`, `genre_id`, `title`, `type`, `status`, `release_date`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `season`
+--
+
+CREATE TABLE `season` (
+  `id` int(11) NOT NULL,
+  `media_id` int(11) NOT NULL,
+  `season_num` int(11) NOT NULL,
+  `release_date` date NOT NULL,
+  `trailer_url` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `season`
+--
+
+INSERT INTO `season` (`id`, `media_id`, `season_num`, `release_date`, `trailer_url`) VALUES
+(1, 10, 1, '2011-03-04', 'https://www.youtube.com/embed/gcTkNV5Vg1E?autoplay=true'),
+(2, 10, 2, '2012-02-02', 'https://www.youtube.com/embed/AlhHGUfCYw4?autoplay=true'),
+(3, 8, 1, '2020-01-02', 'https://www.youtube.com/embed/svnAD0TApb8?autoplay=true'),
+(4, 9, 1, '2013-06-13', 'https://www.youtube.com/embed/oVzVdvGIC7U?autoplay=true'),
+(5, 9, 2, '2014-06-03', 'https://www.youtube.com/embed/vgK33pJp4zc?autoplay=true'),
+(6, 11, 1, '2011-06-04', 'https://www.youtube.com/embed/AbtiqJGhWyY?autoplay=true'),
+(7, 11, 2, '2012-06-04', 'https://www.youtube.com/embed/fXxhTs6fETw?autoplay=true'),
+(8, 10, 1, '2011-03-04', 'https://www.youtube.com/embed/gcTkNV5Vg1E?autoplay=true'),
+(9, 10, 2, '2012-02-02', 'https://www.youtube.com/embed/AlhHGUfCYw4?autoplay=true'),
+(10, 8, 1, '2020-01-02', 'https://www.youtube.com/embed/svnAD0TApb8?autoplay=true'),
+(11, 9, 1, '2013-06-13', 'https://www.youtube.com/embed/oVzVdvGIC7U?autoplay=true'),
+(12, 9, 2, '2014-06-03', 'https://www.youtube.com/embed/vgK33pJp4zc?autoplay=true'),
+(13, 11, 1, '2011-06-04', 'https://www.youtube.com/embed/AbtiqJGhWyY?autoplay=true'),
+(14, 11, 2, '2012-06-04', 'https://www.youtube.com/embed/fXxhTs6fETw?autoplay=true');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -107,18 +161,27 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`) VALUES
-(1, 'coding@gmail.com', '123456'),
-(2, 'test@gmail.com', 'eeee'),
-(3, 'aaaa@gmail.com', 'com'),
 (4, 'vvv@gmail.com', 'ccc'),
 (5, 'aaazzzzz@gmail.com', 'zzzzzz'),
 (6, 'mmmm@gmail.com', 'vert'),
-(7, 'a@gmail.com', 'test'),
-(8, 'azaza@gmail.com', 'aza');
+(7, 'assqs@gmail.com', 'test'),
+(8, 'azaza@gmail.com', 'aza'),
+(9, 'ssssss@gmail.fr', 'sart'),
+(10, 'sssa@gmail.fr', 'aaa'),
+(11, 'ssssqsqs@gmail.fr', 'avoir'),
+(12, 'coding@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `episode`
+--
+ALTER TABLE `episode`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `media_id` (`media_id`),
+  ADD KEY `season_id` (`season_id`);
 
 --
 -- Indexes for table `genre`
@@ -142,6 +205,13 @@ ALTER TABLE `media`
   ADD KEY `media_genre_id_fk_genre_id` (`genre_id`) USING BTREE;
 
 --
+-- Indexes for table `season`
+--
+ALTER TABLE `season`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `media_id` (`media_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -152,16 +222,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `episode`
+--
+ALTER TABLE `episode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `media`
@@ -170,14 +246,27 @@ ALTER TABLE `media`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `season`
+--
+ALTER TABLE `season`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `episode`
+--
+ALTER TABLE `episode`
+  ADD CONSTRAINT `episode_ibfk_1` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`),
+  ADD CONSTRAINT `episode_ibfk_2` FOREIGN KEY (`season_id`) REFERENCES `season` (`id`);
 
 --
 -- Constraints for table `history`
@@ -191,3 +280,9 @@ ALTER TABLE `history`
 --
 ALTER TABLE `media`
   ADD CONSTRAINT `media_genre_id_b1257088_fk_genre_id` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id`);
+
+--
+-- Constraints for table `season`
+--
+ALTER TABLE `season`
+  ADD CONSTRAINT `season_ibfk_1` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`);

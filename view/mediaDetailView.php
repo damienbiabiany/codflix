@@ -56,11 +56,48 @@
      </div> 
     
 
-    <!-- Display seasons only if the media type is  equal to serie -->
-    <?php if (($mediaType =='serie') ): ?>
-         <h3>All Seasons</h3>
-    <?php endif; ?>
     
+    <div class="row">
+
+        <div class="col-md-8">
+            <!-- Display seasons only if the media type is  equal to serie -->
+            <?php if (($mediaType =='serie') ): ?>
+                <h3>All Seasons</h3>
+            <?php endif; ?>
+        </div>
+    </div> 
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <?php foreach( $seasons as $season ): ?>
+                
+                <!-- We're displaying  the media of type film (Home page)--->
+
+
+                <?php if ( $season['media_id'] == $_GET['media'] ): ?>
+
+                        <div class="video">
+                            <div>
+                                <iframe allowfullscreen="" frameborder="0"
+                                        src="<?= $season['trailer_url']; ?>" ></iframe>
+                            </div>
+                        </div>
+                        <div class="title"><?=$season['season_num']; ?> 
+                            <div> 
+                                <p>Release date : <?= $season['release_date']; ?> 
+                                </p>
+                            </div>
+                        </div>
+                 
+                            
+                <?php endif; ?>
+
+            <?php endforeach; ?>
+        </div>
+
+    </div> 
 
 
 
